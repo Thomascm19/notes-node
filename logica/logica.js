@@ -12,7 +12,14 @@ const guardarjson = ()=>{
 }
 
 const cargardb = ()=>{
-    listado = require('../db/data.json')
+
+    try {
+        listado = require('../db/data.json');
+    } catch (error) {
+        listado = [];
+    }
+
+    
 }
 
 const crear = (descripcion) => {
