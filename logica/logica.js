@@ -11,7 +11,14 @@ const guardarjson = ()=>{
       });
 }
 
+const cargardb = ()=>{
+    listado = require('../db/data.json')
+}
+
 const crear = (descripcion) => {
+
+    cargardb();
+
     let tarea = {
         descripcion,
         completado: false,
