@@ -1,9 +1,6 @@
 const argv = require('./config/config').argv;
 const tareas = require('./logica/logica');
 const colors = require('colors');
-//const argv = require('yargs').argv;
-
-console.log(argv);
 
 let comando = argv._[0];
 
@@ -26,8 +23,14 @@ switch(comando){
     break;
 
     case 'actualizar':
-        console.log("Se completa la lista pendiente")
+        let actualizar = tareas.actualizar(argv.descripcion, argv.completado)
+        console.log(actualizar)
     break;
+
+    case 'eliminar':
+        tareas.eliminar(argv.descripcion)
+    break;
+
     default:
     console.log("Comando no reconocido")
 }
